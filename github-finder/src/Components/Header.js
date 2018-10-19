@@ -5,14 +5,28 @@ class Header extends Component {
   onLogin(){
     this.props.onLogin();
   }
+
+  onLogout(){
+    this.props.onLogout();
+  }
+
   render(){
+    let page;
+
+    if(this.props.accessToken){
+      page=<NavItem onClick={this.onLogout.bind(this)} href='#'>Logout</NavItem>
+    }
+    else{
+      page=<NavItem onClick={this.onLogin.bind(this)} href='#'>Login</NavItem>
+    }
+
     return(
       <Navbar className="bg-light">
         <Navbar.Header>
           <Navbar.Brand>GitHub - Finder</Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem href="#" onClick={this.onLogin.bind(this)}>Login</NavItem>
+          {page}
         </Nav>
       </Navbar>
     );

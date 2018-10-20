@@ -15,6 +15,7 @@ class Viewer extends Component {
       avatar: '',
       location: '',
       repos: '',
+      homeURL: '',
       notFound: ''
     };
   }
@@ -33,6 +34,7 @@ class Viewer extends Component {
         avatar: data.avatar_url,
         location: data.location,
         repos: data.public_repos,
+        homeURL: data.html_url,
         notFound: data.message
       })
     })

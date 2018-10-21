@@ -1,4 +1,5 @@
 import React , { Component } from 'react';
+import '../App.css';
 
 class Profile extends Component {
 
@@ -10,9 +11,9 @@ class Profile extends Component {
 
     if(userdata.notFound === 'Not Found'){
       return(
-        <div className="NotFound">
+        <div className="notfound">
           <h2>Heyyyy, the user you are looking for does not exist.</h2>
-          <h4>Please try again with correct user name.</h4>
+          <h5>Please try again with correct user name.</h5>
         </div>
       );
     }else {

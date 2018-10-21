@@ -76,11 +76,14 @@ class Github extends Component {
     if(localStorage.accessToken){
       islog = <Viewer />
     }else{
-      islog = 'Please Login to Proceed';
+      islog = <div id='login-msg'>
+        Please Login to Proceed
+        <img id='github-logo' src={require('./GitHub-Mark.png')} />
+      </div>;
     }
 
     return(
-      <div>
+      <div className='body-box'>
         <Header
            lock={this.lock}
            accessToken={localStorage.accessToken}
@@ -88,7 +91,7 @@ class Github extends Component {
            onLogout={this.logout.bind(this)}
            onLogin={this.showLock.bind(this)}
           />
-      {islog}
+        {islog}
       </div>
     );
   }

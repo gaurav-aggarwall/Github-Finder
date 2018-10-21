@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, Nav } from 'react-bootstrap';
+import '../App.css';
 
 class Header extends Component {
   onLogin(){
@@ -14,16 +15,16 @@ class Header extends Component {
     let page;
 
     if(this.props.accessToken){
-      page=<NavItem onClick={this.onLogout.bind(this)} href='#'>Logout</NavItem>
+      page=<NavItem onClick={this.onLogout.bind(this)} href='#'><div  className='login'>Logout</div></NavItem>
     }
     else{
-      page=<NavItem onClick={this.onLogin.bind(this)} href='#'>Login</NavItem>
+      page=<NavItem onClick={this.onLogin.bind(this)} href='#'><div  className='login'>Login</div></NavItem>
     }
 
     return(
-      <Navbar className="bg-light">
+      <Navbar className="p-2 nav-head">
         <Navbar.Header>
-          <Navbar.Brand>GitHub - Finder</Navbar.Brand>
+          <Navbar.Brand id='heading'>GitHub - Finder</Navbar.Brand>
         </Navbar.Header>
         <Nav>
           {page}

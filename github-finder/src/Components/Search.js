@@ -12,9 +12,9 @@ class Search extends Component {
   render(){
     return(
       <div>
-        <form onSubmit={this.submitForm.bind(this)}>
+        <form onSubmit={this.submitForm.bind(this) } className='search-box'>
           <label>
-            <input type="search" ref="username" placeholder= "Enter username"/>
+            <input type="search" ref="username" placeholder= "Type a username"/>
           </label>
         </form>
       </div>
